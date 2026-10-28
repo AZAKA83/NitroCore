@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "@vercel/blob": "^2.8.1",
-    "@vercel/edge-config": "^1.5.1",
+    "@vercel/global-config": "^1.5.1",
     "aws4fetch": "^1.0.20",
     "bcrypt": "^6.0.0",
     "clamp": "^1.0.1",
