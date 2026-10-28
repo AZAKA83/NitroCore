@@ -1,12 +1,13 @@
-import {defineConfig} from "drizzle-kit";
+﻿import {defineConfig} from "drizzle-kit";
 
-if (process.env.DATABASE_URL) {
-    console.log("Detected possible Postgres Neon")
-    process.env.DB_URL = process.env.DATABASE_URL
-}
-if (process.env.POSTGRES_URL) {
-    console.log("Detected possible Supabase")
-    process.env.DB_URL = process.env.POSTGRES_URL
+const migrationUrl =
+    process.env.DATABASE_URL_UNPOOLED ||
+    process.env.POSTGRES_URL_NON_POOLING ||
+    process.env.DATABASE_URL ||
+    process.env.POSTGRES_URL;
+
+if (migrationUrl) {
+    process.env.DB_URL = migrationUrl;
 }
 
 export default defineConfig({
